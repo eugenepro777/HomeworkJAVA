@@ -12,7 +12,6 @@ public class Task3 {
         double numFirst = scanIn.nextDouble();
         System.out.print("Введите второе число: ");
         double numSecond = scanIn.nextDouble();
-        double result;
         System.out.print("Задайте действие: ");
         String operation = scanIn.nextLine();
         operation = scanIn.nextLine();
@@ -32,33 +31,32 @@ public class Task3 {
 
     public static void calculus(double number1, double number2, String str) {
         double result;
-        switch (str){
-            case "+":
+        switch (str) {
+            case "+" -> {
                 result = number1 + number2;
                 System.out.printf("Результат = %.2f\n", result);
-                break;
-            case "-":
+            }
+            case "-" -> {
                 result = number1 - number2;
                 System.out.printf("Результат = %.2f\n", result);
-                break;
-            case "*":
+            }
+            case "*" -> {
                 result = number1 * number2;
                 System.out.printf("Результат = %.2f\n", result);
-                break;
-            case "**":
+            }
+            case "**" -> {
                 result = pow(number1, number2);
                 System.out.printf("Результат = %.2f\n", result);
-                break;
-            case "/":
+            }
+            case "/" -> {
                 if (number2 == 0)
                     System.out.println("Деление на ноль!");
                 else {
                     result = number1 / number2;
                     System.out.printf("Результат = %.2f\n", result);
                 }
-                break;
-            default:
-                System.out.println("Ошибка при вводе");
+            }
+            default -> System.out.println("Ошибка при вводе");
         }
     }
 
