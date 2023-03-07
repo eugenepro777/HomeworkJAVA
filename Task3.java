@@ -17,35 +17,9 @@ public class Task3 {
         String operation = scanIn.nextLine();
         operation = scanIn.nextLine();
 
-        switch (operation){
-            case "+":
-                result = numFirst + numSecond;
-                System.out.printf("Результат = %.2f\n", result);
-                break;
-            case "-":
-                result = numFirst - numSecond;
-                System.out.printf("Результат = %.2f\n", result);
-                break;
-            case "*":
-                result = numFirst * numSecond;
-                System.out.printf("Результат = %.2f\n", result);
-                break;
-            case "**":
-                result = pow(numFirst, numSecond);
-                System.out.printf("Результат = %.2f\n", result);
-                break;
-            case "/":
-                if (numSecond == 0)
-                    System.out.println("Деление на ноль!");
-                else {
-                    result = numFirst / numSecond;
-                    System.out.printf("Результат = %.2f\n", result);
-                }
-                break;
-            default:
-                System.out.println("Ошибка при вводе");
-        }
-
+        calculus(numFirst,
+                numSecond,
+                operation);
 
     }
     public static double pow(double value, double pow) {
@@ -53,6 +27,38 @@ public class Task3 {
             return value;
         } else {
             return value * pow(value, pow - 1);
+        }
+    }
+
+    public static void calculus(double number1, double number2, String str) {
+        double result;
+        switch (str){
+            case "+":
+                result = number1 + number2;
+                System.out.printf("Результат = %.2f\n", result);
+                break;
+            case "-":
+                result = number1 - number2;
+                System.out.printf("Результат = %.2f\n", result);
+                break;
+            case "*":
+                result = number1 * number2;
+                System.out.printf("Результат = %.2f\n", result);
+                break;
+            case "**":
+                result = pow(number1, number2);
+                System.out.printf("Результат = %.2f\n", result);
+                break;
+            case "/":
+                if (number2 == 0)
+                    System.out.println("Деление на ноль!");
+                else {
+                    result = number1 / number2;
+                    System.out.printf("Результат = %.2f\n", result);
+                }
+                break;
+            default:
+                System.out.println("Ошибка при вводе");
         }
     }
 
